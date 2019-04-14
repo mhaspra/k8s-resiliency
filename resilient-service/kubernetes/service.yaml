@@ -1,0 +1,12 @@
+kind: Service
+apiVersion: v1
+metadata:
+  name: resilient-service
+spec:
+  selector:
+    app: resilient-service
+  ports:
+  - protocol: TCP
+    port: 8081
+    targetPort: 8081
+  type: LoadBalancer

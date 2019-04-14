@@ -1,0 +1,13 @@
+apiVersion: skaffold/v1beta7
+kind: Config
+build:
+  artifacts:
+    - image: gcr.io/mhaspra/resilient-service
+      context: resilient-service
+      jibGradle: {}
+  local:
+    push: false
+deploy:
+  kubectl:
+    manifests:
+      - resilient-service/kubernetes/*
